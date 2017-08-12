@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="jquery-3.2.1.js"></script>
+    <title>Adele's Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Portfolio">
+    <meta property="og:description" content="Built with Next Academy">
+    <meta property="og:site_name" content="My Portfolio">
+    <meta property="og:image" content="https://www.nextacademy.com/img/share/nextacademy-generic.jpg">
+
+  </head>
+
+<div class = "small-container">
+  <button id="surprise-button">click me for surprise!</button>
+  <div id = "haha"></div>
+
+
+  <body>
+
+
+    <div id="navbar">
+      <a href="#about" class = "nav-links">Go to About Me </a>
+      <a href="#show" class = "nav-links">What I've Done </a>
+    </div>
+    <div class="container">
+
+      <div class="small-container" id="about">
+        <h2>Hello, I'm Wei Jie</h2>
+        <p>YOYOYOYO</p>
+        <p>This is my first website, and I'm interested in coding.</p>
+        <p>I'm from Kedah and I love music.</p>
+        <img src="file:///Users/weijiechua/Downloads/insertintocode.JPG" width="100" height="100">
+      </div>
+
+      <div class="small-container" id="show">
+        <h1>What I've done in the past</h1>
+        <ul>
+          <li id="special">Learn to code</li>
+          <li>Some digital marketing</li>
+          <li>Travel</li>
+          <li>Eat I guess</li>
+        </ul>
+        <a href="https://www.nextacademy.com">
+          Learn to code from Next Academy
+        </a>
+      </div>
+
+    </div>
+  </body>
+  <script>
+  $(document).ready(function() {
+    $("#surprise-button").click(function(e) {
+      $.get("http://api.giphy.com/v1/gifs/random?tag=cat&api_key=dc6zaTOxFJmzC", function(res) {
+        $('#haha').html('<img src="' + res.data.image_url + '">' )
+      })
+    })
+  })
+</script>
+</html>
